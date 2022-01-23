@@ -3,8 +3,6 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { DialogOverlay, DialogContent } from '@reach/dialog';
 
-import { COLORS, QUERIES, WEIGHTS } from '../../constants';
-
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
@@ -52,7 +50,7 @@ const Overlay = styled(DialogOverlay)`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: ${COLORS.overlay};
+  background-color: var(--color-overlay);
 `;
 
 const Wrapper = styled(DialogContent)`
@@ -62,7 +60,7 @@ const Wrapper = styled(DialogContent)`
   bottom: 0;
   width: 300px;
   padding: 32px;
-  background-color: ${COLORS.white};
+  background-color: var(--color-white);
 
   display: flex;
   flex-direction: column;
@@ -86,20 +84,20 @@ const Nav = styled.nav`
 `;
 
 const NavLink = styled.a`
-  font-weight: ${WEIGHTS.medium};
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   text-decoration: none;
   font-size: ${18 / 16}rem;
   line-height: ${21.13 / 16}rem;
-  color: ${(props) => (props.active === true ? COLORS.secondary : COLORS.gray[900])};
+  color: ${(props) => (props.active === true ? 'var(--color-secondary)' : 'var(--color-gray-900)')};
 `;
 
 const FooterLink = styled(NavLink)`
   text-transform: none;
   font-size: ${14 / 16}rem;
   line-height: ${16.44 / 16}rem;
-  color: ${COLORS.gray[700]};
-  font-weight: ${WEIGHTS.normal};
+  color: var(--color-gray-700);
+  font-weight: var(--font-weight-normal);
 `;
 
 const Side = styled.div`
